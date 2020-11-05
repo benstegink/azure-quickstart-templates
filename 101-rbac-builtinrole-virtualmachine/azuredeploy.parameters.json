@@ -1,14 +1,15 @@
 {
-    "principalId" : {
-        "value" : ""
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "principalId": {
+      "value": "GEN-AZUREAD-OBJECTID"
     },
     "builtInRoleType": {
-        "value": "Owner"
+      "value": "Reader"
     },
     "virtualMachineName": {
-        "value": "<name of vm>"
-    },
-    "guid" : {
-        "value" : ""
-    }       
+      "value": "GET-PREREQ-virtualMachineName"
+    }
+  }
 }

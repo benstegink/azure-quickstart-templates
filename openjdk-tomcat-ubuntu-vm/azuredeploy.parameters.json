@@ -1,27 +1,18 @@
 {
-    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "javaPackageName": {
-            "value": "openjdk-7-jdk"
-        },
-        "tomcatPackageName": {
-            "value": "tomcat7"
-        },
-        "location": {
-            "value": "West US"
-        },
-        "newStorageAccountName": {
-            "value": ""
-        },
-        "vmDnsName": {
-            "value": "javasample1dns"
-        },
-        "adminUserName": {
-            "value": "javasample1"
-        },
-        "adminPassword": {
-            "value": ""
-        }
-      }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "javaPackageName": {
+      "value": "openjdk-13-jdk"
+    },
+    "tomcatPackageName": {
+      "value": "tomcat9"
+    },
+    "adminUsername": {
+      "value": "GEN-UNIQUE"
+    },
+    "adminPasswordOrKey": {
+      "value": "GEN-SSH-PUB-KEY"
+    }
+  }
 }

@@ -1,29 +1,18 @@
 # Install a Redis cluster on Ubuntu Virtual Machines using Custom Script Linux Extension
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fredis-high-availability%2Fazuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a>
+![Azure Public Test Date](https://azurequickstartsservice.blob.core.windows.net/badges/redis-high-availability/PublicLastTestDate.svg)
+![Azure Public Test Result](https://azurequickstartsservice.blob.core.windows.net/badges/redis-high-availability/PublicDeployment.svg)
+
+![Azure US Gov Last Test Date](https://azurequickstartsservice.blob.core.windows.net/badges/redis-high-availability/FairfaxLastTestDate.svg)
+![Azure US Gov Last Test Result](https://azurequickstartsservice.blob.core.windows.net/badges/redis-high-availability/FairfaxDeployment.svg)
+
+![Best Practice Check](https://azurequickstartsservice.blob.core.windows.net/badges/redis-high-availability/BestPracticeResult.svg)
+![Cred Scan Check](https://azurequickstartsservice.blob.core.windows.net/badges/redis-high-availability/CredScanResult.svg)
+
+[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fredis-high-availability%2Fazuredeploy.json)  [![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.svg?sanitize=true)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fredis-high-availability%2Fazuredeploy.json)
 
 This template deploys a Redis cluster on the Ubuntu virtual machines. This template also provisions a storage account, virtual network, availability sets, public IP addresses and network interfaces required by the installation.
 The template also creates 1 publicly accessible VM acting as a "jumpbox" and allowing to ssh into the Redis nodes for diagnostics or troubleshooting purposes.
-
-The example expects the following parameters:
-
-| Name   | Description    | Default Value |
-|:--- |:---|:---|
-| adminUsername  | Administrator user name used when provisioning virtual machines | |
-| adminPassword  | Administrator password used when provisioning virtual machines | |
-| storageAccountName | Unique namespace for a new storage account where the virtual machine's disks will be placed (cannot be an existing storage account) | |
-| location | Location where resources will be provisioned | |
-| virtualNetworkName | The arbitrary name of the virtual network provisioned for the Redis cluster | redisVirtNet |
-| addressPrefix | The network address space for the virtual network | 10.0.0.0/16 |
-| subnetName | Subnet name for the virtual network that resources will be provisioned in to | redisSubnet1 |
-| subnetPrefix | Address space for the virtual network subnet | 10.0.0.0/24 |
-| nodeAddressPrefix | The IP address prefix that will be used for constructing a static private IP address for each node in the cluster | 10.0.0.1 |
-| jumpbox | The flag allowing to enable or disable provisioning of the jumpbox VM that can be used to access the Redis nodes | Disabled |
-| tshirtSize | The t-shirt size of the Redis deployment | Small |
-| redisVersion | The version of the Redis package to be deployed on the cluster (or use 'stable' to pull in the latest and greatest) | stable |
-| redisClusterName | The arbitrary name of the Redis cluster | redis-cluster |
 
 Topology
 --------
@@ -33,7 +22,7 @@ The AOF persistence is enabled by default, whereas the RDB persistence is tuned 
 
 The following table outlines the VM characteristics for each supported t-shirt size:
 
-| T-Shirt Size | VM Size | CPU Cores | Memory | # of Masters | # of Slaves | Total # of Nodes | 
+| T-Shirt Size | VM Size | CPU Cores | Memory | # of Masters | # of Slaves | Total # of Nodes |
 |:--- |:---|:---|:---|:---|:---|:---|
 | Small | Standard_A1 | 1 | 1.75 GB | 3 | 0 | 3 |
 | Medium | Standard_A2 | 2 | 3.5 GB | 3 | 3 | 6 |
@@ -47,3 +36,5 @@ NOTE: To access the individual Redis nodes, you need to enable and use the publi
 - SSH key is not yet implemented and the template currently takes a password for the admin user
 - Redis version 3.0.0 or above is a requirement for the cluster (although this template also supports Redis 2.x which will be deployed using a traditional master-slave replication)
 - A static IP address (starting with the prefix defined in the _nodeAddressPrefix_ parameter) will be assigned to each Redis node in order to work around the current limitation of not being able to dynamically compose a list of IP addresses from within the template (by default, the first node will be assigned the private IP of 10.0.0.10, the second node - 10.0.0.11, and so on)
+
+

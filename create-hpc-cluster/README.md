@@ -1,58 +1,15 @@
-# Create HPC Cluster
+# Create HPC cluster with Windows compute nodes
 
-# Using HPC published head node image
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fcreate-hpc-cluster%2Fazuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a>
+![Azure Public Test Date](https://azurequickstartsservice.blob.core.windows.net/badges/create-hpc-cluster/PublicLastTestDate.svg)
+![Azure Public Test Result](https://azurequickstartsservice.blob.core.windows.net/badges/create-hpc-cluster/PublicDeployment.svg)
 
-This template allows you to create one HPC Cluster
+![Azure US Gov Last Test Date](https://azurequickstartsservice.blob.core.windows.net/badges/create-hpc-cluster/FairfaxLastTestDate.svg)
+![Azure US Gov Last Test Result](https://azurequickstartsservice.blob.core.windows.net/badges/create-hpc-cluster/FairfaxDeployment.svg)
 
-Below are the parameters that the template expectes.
+![Best Practice Check](https://azurequickstartsservice.blob.core.windows.net/badges/create-hpc-cluster/BestPracticeResult.svg)
+![Cred Scan Check](https://azurequickstartsservice.blob.core.windows.net/badges/create-hpc-cluster/CredScanResult.svg)
+[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fcreate-hpc-cluster%2Fazuredeploy.json)  [![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.svg?sanitize=true)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fcreate-hpc-cluster%2Fazuredeploy.json)
 
-| Name   | Description    |
-|:--- |:---|
-| namePrefix | The prefix of the resources(storage account, virtual network, virtual machine etc) to be created. |
-| location | location where the resources will be deployed |
-| headNodeVMSize | Size of the head node Virtual Machine |
-| computeNodeNumber | Number of compute nodes to be deployed |
-| computeNodeVMSize | Size of the compute node Virtual Machine |
-| computeNamePrefix | Compute node name prefix |
-| storageAccountType | Storage Account type |
-| adminUsername  | Username for the Virtual Machines  |
-| adminPassword  | Password for the Virtual Machines  |
-| headNodeImagePublisher  | head node image publisher, default is MicrosoftWindowsServerHPCPack, user should keep it as default  |
-| headNodeImageOffer  | head node image offer, default is WindowsServerHPCPack, user should keep it as default  |
-| headNodeImageSKU  | head node image sku, default is 2012 R2  |
-| computeNodeImagePublisher  | compute node image publisher, default is MicrosoftWindowsServer, user should keep it as default  |
-| computeNodeImageOffer  | compute node image offer, default is WindowsServer, user should keep it as default  |
-| computeNodeImageSKU  | compute node image sku, default is 2012-R2-Datacenter  |
-| headNodePostConfigScript  | post config script on head node, if user don't need post config, can ignore it. the format should be with full url and arguments  |
-| computeNodePostConfigScript  | post config script on compute node, if user don't need post config, can ignore it. the format should be with full url and arguments  |
+This template allows you to create an HPC cluster with Windows compute nodes. You can choose HPC Pack 2012 R2 Compute Node image or HPC Pack 2012 R2 Compute Node with Excel image to deploy compute nodes.
 
-# Other Option: Using HPC published head node image and user custom compute node image
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fcreate-hpc-cluster-custom-image%2Fazuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a>
 
-This template allows you to create one HPC Cluster
-
-Below are the parameters that the template expectes.
-
-| Name   | Description    |
-|:--- |:---|
-| namePrefix | The prefix of the resources(storage account, virtual network, virtual machine etc) to be created. |
-| location | location where the resources will be deployed |
-| headNodeVMSize | Size of the head node Virtual Machine |
-| computeNodeNumber | Number of compute nodes to be deployed |
-| computeNodeVMSize | Size of the compute node Virtual Machine |
-| computeNamePrefix | Compute node name prefix |
-| storageAccountType | Storage Account type |
-| adminUsername  | Username for the Virtual Machines  |
-| adminPassword  | Password for the Virtual Machines  |
-| computeNodeSourceImageName  | user custom compute node image name  |
-| computeNodeSourceImageContainer  | the path of the container which contains user custom iamge, format like   https://<storageAccount>.blob.core.windows.net/<container name>/|
-| headNodeImagePublisher  | head node image publisher, default is MicrosoftWindowsServerHPCPack, user should keep it as default  |
-| headNodeImageOffer  | head node image offer, default is WindowsServerHPCPack, user should keep it as default  |
-| headNodeImageSKU  | head node image sku, default is 2012 R2  |
-| headNodePostConfigScript  | post config script on head node, if user don't need post config, can ignore it. the format should be with full url and arguments  |
-| computeNodePostConfigScript  | post config script on compute node, if user don't need post config, can ignore it. the format should be with full url and arguments  |

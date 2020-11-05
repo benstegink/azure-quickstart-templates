@@ -1,24 +1,21 @@
 {
-    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "newStorageAccountName": {
-            "value": "storage"
-        },
-        "vmDnsName": {
-            "value": "vmdnsname"
-        },
-        "adminUsername": {
-            "value": "azureuser"
-        },
-        "adminPassword": {
-            "value": "password"
-        },
-        "mySqlPassword": {
-            "value": "password"
-        },
-        "vmSize": {
-            "value": "Standard_D2"
-        }
-   }
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmDnsName": {
+      "value": "GEN-UNIQUE"
+    },
+    "adminUsername": {
+      "value": "GEN-UNIQUE"
+    },
+    "mySqlPassword": {
+      "value": "GEN-PASSWORD"
+    },
+    "vmSize": {
+      "value": "Standard_D2_v2"
+    },
+    "adminPasswordOrKey": {
+      "value": "GEN-SSH-PUB-KEY"
+    }
+  }
 }

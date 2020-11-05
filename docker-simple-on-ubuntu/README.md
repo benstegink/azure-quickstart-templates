@@ -1,23 +1,16 @@
 # Simple deployment of an Ubuntu VM with Docker
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fdocker-simple-on-ubuntu%2Fazuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a>
+![Azure Public Test Date](https://azurequickstartsservice.blob.core.windows.net/badges/docker-simple-on-ubuntu/PublicLastTestDate.svg)
+![Azure Public Test Result](https://azurequickstartsservice.blob.core.windows.net/badges/docker-simple-on-ubuntu/PublicDeployment.svg)
 
-Built by: [coreysa](https://github.com/coreysa)
+![Azure US Gov Last Test Date](https://azurequickstartsservice.blob.core.windows.net/badges/docker-simple-on-ubuntu/FairfaxLastTestDate.svg)
+![Azure US Gov Last Test Result](https://azurequickstartsservice.blob.core.windows.net/badges/docker-simple-on-ubuntu/FairfaxDeployment.svg)
 
-This template allows you to deploy an Ubuntu VM with Docker (using the Docker extension) and three Docker containers pulled directly from DockerHub and deployed using Docker Compose.
+![Best Practice Check](https://azurequickstartsservice.blob.core.windows.net/badges/docker-simple-on-ubuntu/BestPracticeResult.svg)
+![Cred Scan Check](https://azurequickstartsservice.blob.core.windows.net/badges/docker-simple-on-ubuntu/CredScanResult.svg)
 
-Below are the parameters that the template expects
+[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fdocker-simple-on-ubuntu%2Fazuredeploy.json)
+[![Visualize](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/visualizebutton.svg?sanitize=true)](http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fdocker-simple-on-ubuntu%2Fazuredeploy.json) 
 
-| Name   | Description    |
-|:--- |:---|
-| newStorageAccountName  | Unique DNS Name for the Storage Account where the Virtual Machine's disks will be placed. |
-| location | The location where the Virtual Machine will be deployed |
-| adminUsername  | Username for the Virtual Machine  |
-| adminPassword  | Password for the Virtual Machine  |
-| dnsNameForPublicIP  | Unique DNS Name for the Public IP used to access the Virtual Machine. |
-| ubuntuOSVersion  | The Ubuntu version for deploying the Docker containers. This will pick a fully patched image of this given Ubuntu version. Allowed values: 14.04.2-LTS, 14.04-DAILY, 15.04, 14.10. |
-| dockerHubImage1  | The name of the first DockerHub image to pass through to Docker compose on the VM. |
-| dockerHubImage2  | The second DockerHub image. |
-| dockerHubImage3  | The third DockerHub image. |
+This template allows you to deploy an Ubuntu VM with Docker (using the Docker Extension) installed.
+You can run `docker` commands by connecting to the virtual machine with SSH.
